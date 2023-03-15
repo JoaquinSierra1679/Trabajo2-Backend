@@ -1,38 +1,46 @@
 [
     {
+        "id": 1,
         "title": "Pantalon Nike",
         "description": "100% algodon. Calidad Premium",
         "price": 43000,
-        "thumbail": "thumbail",
+        "thumbail": [],
         "code": "code1",
-        "stock": 10,
-        "id": 1
+        "stock": 20,
+        "status": true,
+        "category": "pantalones"
     },
     {
+        "id": 2,
         "title": "Buzo Adidas",
         "description": "Capucha retornable. Calidad Premium",
         "price": 10000,
-        "thumbail": "thumbail",
+        "thumbail": [],
         "code": "code2",
-        "stock": 20,
-        "id": 2
+        "stock": 32,
+        "status": true,
+        "category": "Buzos"
     },
     {
+        "id": 0,
         "title": "Remera Oversize PUMA",
         "description": "OVERSIZE Puma 100% algodon",
         "price": 69000,
-        "thumbail": "thumbail",
-        "code": "code3",
-        "stock": 30,
-        "id": 3
+        "thumbail": [],
+        "code": "codee5",
+        "stock": 20,
+        "status": true,
+        "category": "Remeras"
     },
     {
+        "id": 4,
         "title": "Xiaomi Smart Watch",
         "description": "Reloj Smart High Quality",
         "price": 19000,
-        "thumbail": "thumbail",
-        "code": "code4",
-        "stock": 40,
-        "id": 4
+        "thumbail": [],
+        "code": "code9",
+        "stock": 11,
+        "status": true,
+        "category": "Otros"
     }
 ]
