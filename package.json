@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/app.js"
@@ -11,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/JoaquinSierra1679/Trabajo2-Backend.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -18,6 +20,8 @@
   },
   "homepage": "https://github.com/JoaquinSierra1679/Trabajo2-Backend#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.1",
+    "socket.io": "^4.6.1"
   }
 }
