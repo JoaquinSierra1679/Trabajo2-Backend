@@ -4,13 +4,22 @@
 <h1>Productos Tiempo Real:</h1>
 
 <ul id="containerProducts">
-    {{#each products}}
-        <li>
-            <p><b>{{title}}</b></p>
-            <p>Precio: ${{price}}</p>
-            <p>Descripción: {{description}}</p>
-            <p>Stock: {{stock}}</p>
-            <p>Categoría: {{category}}</p>
-        </li>
-        {{/each}}
-</ul>
+        {{#each products.docs}}
+    <li>
+        <p><b>{{this.title}}</b></p>
+        <p>Precio: ${{this.price}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <p>Categoría: {{this.category}}</p>
+    </li>
+    {{/each}}
+    </ul>
+
+<div>
+    {{#if products.hasPrevPage}}
+        <a href="/real-time-products/?page={{products.prevPage}}&sort={{products.sort}}&limit={{products.limit}}">Anterior</a>
+    {{/if}}
+    <span>Página {{products.page}} de {{products.totalPages}}</span>
+    {{#if products.hasNextPage}}
+        <a href="/real-time-products/?page={{products.nextPage}}&sort={{products.sort}}&limit={{products.limit}}">Siguiente</a>
+    {{/if}}
+</div>

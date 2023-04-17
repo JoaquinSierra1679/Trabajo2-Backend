@@ -4,17 +4,20 @@ import { manager } from "../app.js";
 const viewsRouter = Router()
 viewsRouter.use(json())
 
-viewsRouter.get("/", async (req,res)=>{
-    const products = await manager.getProducts()
-    res.render("home", {products})
+viewsRouter.get("/", async (req, res) => {
+    const { page, limit, sort, title, stock } = req.query
+    const query = {title, stock}
+    const products = await manager.getProducts(page, limit, sort, query)
+    res.render("home", { products })
 })
 
-viewsRouter.get("/real-time-products", async (req,res)=>{
-    const products = await manager.getProducts()
-    res.render("real-time-products", {products})            
-
-   // opción 2 emitir los products por websocket
-
+viewsRouter.get("/real-time-products", async (req, res) => {
+    const { page, limit, sort, title, stock } = req.query
+    const query = {title, stock}
+    const products = await manager.getProducts(page, limit, sort, query)
+    res.render("real-time-products", { products })
 })
 
-export default viewsRouter
+viewsRouter.get("/chat", async (req, res) => {
+    res.render("chat")
+})

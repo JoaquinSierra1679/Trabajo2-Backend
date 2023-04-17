@@ -7,7 +7,6 @@ socket.on("new-product", (data)=>{
                                     <li>
                                         <p><b>${data.title}</b></p>
                                         <p>Precio: $ ${data.price}</p>
-                                        <p>Descripción: ${data.description}</p>
                                         <p>Stock: ${data.stock}</p>
                                         <p>Categoría: ${data.category}</p>
                                     </li>
@@ -21,7 +20,6 @@ socket.on("delete-product", (products)=>{
                                         <li>
                                             <p><b>${prod.title}</b></p>
                                             <p>Precio: $ ${prod.price}</p>
-                                            <p>Descripción: ${prod.description}</p>
                                             <p>Stock: ${prod.stock}</p>
                                             <p>Categoría: ${prod.category}</p>
                                         </li>
@@ -36,7 +34,6 @@ socket.on("update-product", (products)=>{
                                         <li>
                                             <p><b>${prod.title}</b></p>
                                             <p>Precio: $ ${prod.price}</p>
-                                            <p>Descripción: ${prod.description}</p>
                                             <p>Stock: ${prod.stock}</p>
                                             <p>Categoría: ${prod.category}</p>
                                         </li>
