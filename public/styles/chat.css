@@ -1,0 +1,13 @@
+main{
+    text-align: center;
+    padding: 0 3rem 0 3rem;
+}
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+strong{
+    font-weight: 900;
+}
+#messages{
+    text-align: start;
+}

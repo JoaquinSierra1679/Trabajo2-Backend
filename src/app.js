@@ -4,9 +4,8 @@ import cartManagerRouter from "../routes/cartManager.router.js";
 import chatManagerRouter from "../routes/chatManager.router.js";
 import ChatManager from "../dao/db-managers/chatManager.js";
 import { AuthRouter } from "../routes/auth.router.js";
-import {initializedPassport} from "../config/passport.config.js"
 
-import {__dirname, generateToken, validateToken} from "./utils.js";
+import __dirname from "./utils.js";
 import { engine} from "express-handlebars";
 import { Server } from "socket.io";
 import viewer from "../routes/views.router.js";
@@ -14,7 +13,6 @@ import mongoose from "mongoose";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";
-import passport from "passport";
 
 
 const app = express();
@@ -38,12 +36,6 @@ app.use(session({
     resave:true,
     saveUninitialized:true
 }));
-
-//passport
-initializedPassport();
-app.use(passport.initialize());
-app.use(passport.session());
-
 //viewer route
 app.use("/", viewer);
 app.use("/products", viewer);
