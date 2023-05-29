@@ -1,0 +1,30 @@
+<h1>carrito page</h1>
+
+<div>
+  {{#each detailCart}}
+    <ul>
+      <li>Id del carrito: {{this._id}}</li>
+      <br>
+        <li>products:</li>
+        <ul>
+          {{#each products}}
+            <li>product: {{product.title}}</li>
+            <ul>
+              <li>_id: {{this.product._id}}</li>
+              <li>code: {{product.code}}</li>
+              <li>title: {{product.title}}</li>
+              <li>description: {{product.description}}</li>
+              <li>price: {{product.price}}</li>
+              <li>thumbnail: {{product.thumbnail}}</li>
+              <li>stock: {{product.stock}}</li>
+              <li>status: {{product.status}}</li>
+              <li>category: {{product.category}}</li>
+            <li>quantity: {{quantity}}</li>
+            </ul>
+            <br>
+          {{/each}}
+        </ul>
+      
+    </ul>
+  {{/each}}
+</div>

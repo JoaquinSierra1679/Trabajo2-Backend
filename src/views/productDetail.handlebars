@@ -1,0 +1,14 @@
+<div id="prodDetail">
+  <h1>aqui estoy en detail</h1>
+  <div>
+    <h1>{{detailData.title}}</h1>
+    <p>{{detailData.description}}</p>
+    <h2>precio:</h2><p>{{detailData.price}}</p>
+    <form method="put" action="http://localhost:8080/api/cart/642c4d884a1f8632ca115c10/product/{{detailData._id}}">
+      <button type="submit">Add to cart</button>
+    </form>
+    {{#each detailData}}{{/each}}
+
+  </div>
+
+</div>

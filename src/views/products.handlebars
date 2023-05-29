@@ -1,0 +1,32 @@
+<div>
+  <h2>Lista de productos directa para el USUARIO: {{userData}}</h2>
+  <div>
+    <form method="post" action="/api/sessions/logout">
+        <button type="submit">logOut</button>
+    </form>
+</div>
+  <div id="prodslist">
+    <ul>
+      {{#each prods.docs}}
+        <br />
+        <li>Titulo:{{title}}, Id:{{id}}, Precio{{price}}, Stock:{{stock}}</li>
+        <a href="http://localhost:8080/products/productDetail/?pId={{id}}">Check
+          more details</a>
+        <form
+          method="put"
+          action="/api/cart/642c4d884a1f8632ca115c10/product/{{id}}"
+        >
+          <button type="submit">Add to cart</button>
+        </form>
+        <br />
+      {{/each}}
+    </ul>
+  </div>
+  {{#if prods.hasPrevPage}}
+        <a href="/products/?page={{prods.prevPage}}">Anterior</a>
+        {{/if}}
+        <span>Página {{prods.page}} de {{prods.totalPages}}</span>
+        {{#if prods.hasNextPage}}
+        <a href="/products/?page={{prods.nextPage}}">Siguiente</a>
+        {{/if}}
+</div>

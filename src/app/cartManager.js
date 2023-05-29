@@ -35,7 +35,7 @@ class CartManager {
 
   async getCarts(cId) {
     try {
-
+      
       if (cId) {
         const cartId = Number(cId);
         const carts = await fs.promises.readFile(this.#path, "utf-8");

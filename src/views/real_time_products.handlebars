@@ -1,0 +1,42 @@
+<div>
+    <h2>agregar productos</h2>
+  <div id="agregar">
+    <form action="/api/products/" method="post">
+      <div>
+        <label for="code">code</label>
+        <input type="number" name="code" id="code"/>
+      </div>
+      <div>
+        <label for="title">title</label>
+        <input type="text" name="title" id="title"/>
+      </div>
+      <div>
+        <label for="description">description</label>
+        <input type="text" name="description" id="description"/>
+      </div>
+      <div>
+        <div>
+            <label for="price">price</label>
+            <input type="number" name="price" id="price"/>
+        </div>
+      </div>
+      <div>
+        <label for="stock">stock</label>
+        <input type="text" name="stock" id="stock"/>
+      </div>
+      <div>
+        <label for="category">category</label>
+        <input type="text" name="category" id="category"/>
+      </div>
+      <input type="submit" value="submit">
+    </form>
+  </div>
+  <div id="mostrar">
+    <h2>Productos actualizados</h2>
+    <div id="prodsList-dysplay">
+        
+    </div>
+  </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
