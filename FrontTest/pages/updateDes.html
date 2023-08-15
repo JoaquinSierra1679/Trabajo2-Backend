@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update design text fields</title>
+    
+</head>
+<body>
+    <h1>update design text fields</h1>
+    <form id="uppdateDes">
+        <label for="desId">design Id</label>
+        <input type="text" name="desId">
+        <br>
+        <label for="value">field to update</label>
+        <select name="value" id="valueSelect">
+            <option value="title">title</option>
+            <option value="description">description</option>
+            <option value="category">category</option>
+            <option value="price">price</option>
+            <option value="stock">stock</option>
+        </select>
+        <br>
+        <label for="data"> new value</label>
+        <input type="text" name="data">
+        <br>
+        <input type="submit">
+    </form>
+    <script src="../script/updatedes.js"></script>
+</body>
+</html>

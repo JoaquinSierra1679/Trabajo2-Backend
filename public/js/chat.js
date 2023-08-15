@@ -1,40 +1,31 @@
-//chat
 const socket = io();
+//inputs
+const chatBox = document.getElementById("chatbox");
+const emailBox = document.getElementById("emailBox");
+const sendtBtn = document.getElementById("sendButton");
+//outputs
+const divMessages = document.getElementById("historial");
 
-let userName;
-
-userName = prompt("whats your name?");
-if (userName) {
-  alert(`Bienvenido al chat ${userName}`);
-  socket.emit("new-user", userName);
-}else{
-  prompt("user is necesary");
+const sendMessage = () =>{
+    socket.emit("message", {user:emailBox.value, message:chatBox.value});
+    chatBox.value="";
 };
 
-const chatInput = document.getElementById("chat-input");
-chatInput.addEventListener("keyup", (ev) => {
-  if (ev.key === "Enter") {
-    const inputMessage = chatInput.value;
-    if (inputMessage) {
-      socket.emit("chat-message", {userName, message: inputMessage});
-      chatInput.value = "";
-    }else{
-      alert("input vacio")
+chatbox.addEventListener('keydown',(e)=>{
+    if(e.key === 'Enter'){
+        sendMessage();
     }
-  }
 });
 
-const messagesPanel = document.getElementById("messages-panel");
-socket.on("messages",async (data) => {
-  console.log(data);
-  let messages = "";
-
-  await data.forEach((m) => {
-    messages += `<b>${m.userName}:</b> ${m.message}</br>`;
-  });
-  messagesPanel.innerHTML = messages;
+sendtBtn.addEventListener("click", (e) =>{
+    sendMessage();
 })
 
-socket.on("new-user", (userName) => {
-    alert(`${userName} se ha unido al chat`);
-  })
+socket.on("msgHistory", (data) =>{
+    divMessages.innerHTML=``;
+    data.forEach(element => {
+        const parrafo = document.createElement("p");
+        parrafo.innerHTML=`${element.user} - message: ${element.message}`;
+        divMessages.appendChild(parrafo);
+    })
+})

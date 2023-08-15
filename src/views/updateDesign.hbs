@@ -1,0 +1,32 @@
+<body>
+
+  <ul>
+    {{#each designs}}
+        <br />
+        <li>Titulo:{{title}}, ID: {{_id}}</li>
+    {{/each}}
+  </ul>
+  <h1>update design text fields</h1>
+  <form id="updateDes">
+    <label for="desId">design Id</label>
+    <input type="text" name="desId" />
+    <br />
+    <label for="value">field to update</label>
+    <select name="value" id="valueSelect">
+      <option value="title">title</option>
+      <option value="description">description</option>
+      <option value="category">category</option>
+      <option value="price">price</option>
+      <option value="stock">stock</option>
+      <option value="photos">photo</option>
+    </select>
+    <br />
+    <label for="data"> new value</label>
+    <div id="dataContainer">
+      <input type="text" name="data" id="data"/>
+    </div>
+    <br />
+    <input type="submit" />
+  </form>
+  <script src="/js/updatedes.js"></script>
+</body>

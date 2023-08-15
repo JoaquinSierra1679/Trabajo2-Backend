@@ -1,0 +1,16 @@
+<body>
+    <h1>tu eres el admin {{user}}</h1>
+    <h2>lista de users</h2>
+    <ul>
+        
+        {{#each users}}
+        <li>Id: {{this._id}}Email:{{email}} Name:{{name}} role:{{role}}</li>
+        {{/each}}
+    </ul>
+    <br>
+    <h2>modificar rol</h2>
+    <a href="/roleUpdate">Role Update</a>
+    <h2>borrar usuarios antiguos</h2>
+    <button onclick="deleteUsers()">Borrar usuarios con mas de 2 dias sin actividad</button>
+    <script src="/js/usersmanager.js"></script>
+</body>
